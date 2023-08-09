@@ -1,0 +1,38 @@
+.homee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    position: relative;
+}
+header img{
+    width: 80vw;
+    height: 65vh;
+    object-fit: cover;
+    object-position: top;
+    
+}
+header h1{
+    position: absolute;
+    top: 20%;
+    color: white;
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+}
+header .select{
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+header .select select{
+    width: 40%;
+    height: 40px;
+    border: solid white;
+    background-color: rgba(238, 238, 238, 0.8);
+    font-size: 1.5em;
+}
+
