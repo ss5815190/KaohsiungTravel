@@ -17,7 +17,7 @@ header h1{
     position: absolute;
     top: 20%;
     color: white;
-    font-size: 3em;
+    font-size: 3rem;
     width: 100%;
     text-align: center;
 }
@@ -28,11 +28,15 @@ header .select{
     display: flex;
     justify-content: center; 
 }
-header .select select{
+header .select .css-b62m3t-container{
     width: 40%;
     height: 40px;
     border: solid white;
+    border:none;
+    font-size: 1.5rem;
+}
+header .select .css-13cymwt-control{
     background-color: rgba(238, 238, 238, 0.8);
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 

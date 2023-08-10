@@ -1,3 +1,6 @@
+html{
+  font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1440 - 300)));
+}
 body {
   
   margin: 0;
@@ -6,7 +9,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1440 - 300)));
 }
 
 code {
