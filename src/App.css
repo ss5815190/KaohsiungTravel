@@ -39,4 +39,41 @@ header .select .css-13cymwt-control{
     background-color: rgba(238, 238, 238, 0.8);
     font-size: 1.5rem;
 }
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:2vw;
+}
+.content .card{
+    width:36vw;
+    height: auto;
+}
+.content .card img{
+    object-fit: cover;
+    height: 155px;
+    width: 100%;
+    
+}
+.card-grid .card-top{
+    height: 155px;
+    position: relative;
+}
+.card-top h2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 14px;
+    margin-left: 14px;
+}
+.card-top p{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    margin-right: 14px;
+}
+
+
 

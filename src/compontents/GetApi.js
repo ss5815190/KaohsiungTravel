@@ -4,9 +4,10 @@ import {createContext,useState,useEffect}from'react';
 export const ApiContext = createContext();
 
 export const ApiContextProvider = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
-  const [district,setDistrict]=useState([])//選取的行政區列表
+  const [isLoading, setIsLoading] = useState(true)
+  const [data, setData] = useState([])
+  const [disSelect,setDisSelect]=useState([])
+  const [district,setDistrict]=useState([])//列出的行政區列表
   useEffect(() => {
     const api=async()=>{
     try {
@@ -14,7 +15,7 @@ export const ApiContextProvider = ({ children }) => {
       const apidata=await res.json()
       setData(apidata.data.XML_Head.Infos.Info) 
       setIsLoading(false);
-      console.log(apidata.data.XML_Head.Infos.Info);
+      console.log('一開始的資料',apidata.data.XML_Head.Infos.Info)
     } catch (err) {
       console.log(err)
     }
@@ -22,16 +23,10 @@ export const ApiContextProvider = ({ children }) => {
   api()
   }, []);
 
-  // useEffect(()=>{
-  //     if(data.length>1){
-  //     data.map((e)=>{
-  //        setDistrict(...district,[e.Add])
-  //       })
-  //     }
-  //   }
-  // ,[data])
+  
   return (
-    <ApiContext.Provider value={{ data, isLoading,district,setDistrict}}>
+    <ApiContext.Provider value={{ data, isLoading,district,setDistrict
+    ,disSelect,setDisSelect}}>
       {children}
     </ApiContext.Provider>
   );
