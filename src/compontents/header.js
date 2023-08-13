@@ -49,6 +49,13 @@ const Header = () => {
             <button style={{backgroundColor:'#F5D005'}} onClick={()=>SwitchDistrict('新興區')}>新興區</button>
             <button style={{backgroundColor:'#559AC8'}} onClick={()=>SwitchDistrict('鹽埕區')}>鹽埕區</button>
           </div>
+          <div className="line">
+            <div className="icon">
+              <div className="icon_contain">
+                <div className="triangle"></div>
+              </div>
+            </div>
+          </div>
         </div>
     </header>
   )
