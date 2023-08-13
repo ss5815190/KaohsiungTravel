@@ -11,9 +11,16 @@ const Card=(e)=>{
                 <p>{e.area}</p>
               </div>
               <div className="card-info">
-                <div className="timeopen">{e.opentime}</div>
-                <div className="address">{e.address}</div>
-                <div className="phone">{e.phone}</div>
+                <div className="timeopen">
+                  <img src="./images/icons_clock.png" alt="clock"/>
+                  <p>{e.opentime}</p>
+                  </div>
+                <div className="address">
+                  <img src="./images/icons_pin.png" alt="pin"/>
+                  <p>{e.address}</p></div>
+                <div className="phone">
+                  <img src="./images/icons_phone.png" alt="phone"/>
+                  <p>{e.phone}</p></div>
               </div>
             </div>
         </div>

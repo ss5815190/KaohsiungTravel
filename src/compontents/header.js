@@ -4,10 +4,8 @@ import Select from "react-select";
 
 const Header = () => {
   const {data,setDistrict,district,disSelect,setDisSelect}=useContext(ApiContext)
-  const options = [
+  const  options = [
     { value: "", label: "--請選擇行政區--" },
-    { value: "左營區", label: "左營區" },
-    { value: "楠梓區", label: "楠梓區" },
   ];
   useEffect(()=>{
     //把重複地區排除加到選單裡
@@ -18,23 +16,24 @@ const Header = () => {
       return index === firstIndex;
       
     });
-    setDisSelect(uniqueObjects)
-    console.log('選單',uniqueObjects)
+    //只保留地區 
+    const updatedOptions = uniqueObjects.map(obj => ({
+      value: obj.Add.slice(6, 9),
+      label: obj.Add.slice(6, 9),
+    }));
+    //用 reduce 函數將這些轉換後的選項合併到現有的 options
+    const newOptions = updatedOptions.reduce((acc, option) => acc.concat(option), options);
+    setDisSelect(newOptions)
+    console.log("options,",newOptions)
   },[data])
-  
-  // useEffect(()=>{
-    
-  //   })
-  // },[disSelect])
-  
   
   console.log('行政區',district)
   return (
-    <header>
-        <img src="./images/the-urban.png" alt="urban"/>
+    <header style={{ backgroundImage: `url(./images/the-urban.png)` }}>
+        {/* <img src="./images/the-urban.png" alt="urban"/> */}
         <h1>高雄旅遊資訊</h1>
         <div className="select">
-          <Select options={options}
+          <Select options={disSelect}
             defaultValue={options[0]}
             onChange={(item) => setDistrict(data.filter((filter)=>filter.Add.slice(6,9)===item.value))}
           />
