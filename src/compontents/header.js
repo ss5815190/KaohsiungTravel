@@ -28,6 +28,9 @@ const Header = () => {
   },[data])
   
   console.log('行政區',district)
+  const SwitchDistrict=(dis)=>{
+    setDistrict(data.filter((filter)=>filter.Add.slice(6,9)===dis))
+  }
   return (
     <header style={{ backgroundImage: `url(./images/the-urban.png)` }}>
         {/* <img src="./images/the-urban.png" alt="urban"/> */}
@@ -35,10 +38,18 @@ const Header = () => {
         <div className="select">
           <Select options={disSelect}
             defaultValue={options[0]}
-            onChange={(item) => setDistrict(data.filter((filter)=>filter.Add.slice(6,9)===item.value))}
+            onChange={(item) => SwitchDistrict(item.value)}
           />
         </div>
-        
+        <div className="popular">
+          <p>熱門行政區</p>
+          <div className="popular_option">
+            <button style={{backgroundColor:'#8A82CC'}} onClick={()=>SwitchDistrict('苓雅區')}>苓雅區</button>
+            <button style={{backgroundColor:'#FFA782'}} onClick={()=>SwitchDistrict('三民區')}>三民區</button>
+            <button style={{backgroundColor:'#F5D005'}} onClick={()=>SwitchDistrict('新興區')}>新興區</button>
+            <button style={{backgroundColor:'#559AC8'}} onClick={()=>SwitchDistrict('鹽埕區')}>鹽埕區</button>
+          </div>
+        </div>
     </header>
   )
 }
