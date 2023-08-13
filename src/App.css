@@ -68,6 +68,35 @@ header .select .css-1xc3v61-indicatorContainer{
 header .select .css-15lsz6c-indicatorContainer{
     display: none;
 }
+.popular{
+    width: 800px;
+    margin-top: 352px;
+    height: 112px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+    border-radius: 5px;
+}
+.popular p{
+    font-size: 18px;
+    margin-left: 26px;
+    margin-top: 20px;
+}
+.popular .popular_option{
+    display: flex;
+    margin-left: 51px;
+    margin-top: 14px;
+}
+.popular .popular_option button{
+    margin-right: 23px;
+    margin-bottom: 18px;
+    height: 42px;
+    width: 130px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+}
+/*  */
 .content{
     margin-top: 270px;
     display: grid;
