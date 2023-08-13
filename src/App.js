@@ -3,6 +3,7 @@ import {useContext}from'react';
 import Header from './compontents/Header.js';
 import'./App.css'
 import Displaypage from './compontents/Displaypage.js';
+import Footer from './compontents/Footer.js';
 function App() {
   const {isLoading}=useContext(ApiContext)
   if (isLoading) {
@@ -12,6 +13,7 @@ function App() {
 			<div className="homee">
         <Header/>
         <Displaypage/>
+        <Footer/>
 			</div>	 
 		)
 }
