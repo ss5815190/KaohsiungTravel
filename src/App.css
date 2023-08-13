@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
     background-color: #F7F7F7;
 }
 header{
@@ -69,7 +69,8 @@ header .select .css-15lsz6c-indicatorContainer{
     display: none;
 }
 .popular{
-    width: 800px;
+    max-width: 800px;
+    width: 95vw;
     margin-top: 352px;
     height: 112px;
     background: #FFFFFF;
@@ -139,6 +140,10 @@ header .select .css-15lsz6c-indicatorContainer{
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
     row-gap: 36px;
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    max-width: 1024px;
 }
 .content .card{
     width:80vw;
