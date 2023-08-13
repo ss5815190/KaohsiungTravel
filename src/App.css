@@ -7,7 +7,7 @@
 }
 header{
     position: relative;
-    height: 380PX;
+    height: 380px;
     max-width: 1024px;
     width: 100vw;
     display: flex;
@@ -144,9 +144,10 @@ header .select .css-15lsz6c-indicatorContainer{
     justify-content: space-between;
     flex-wrap: wrap; */
     max-width: 1024px;
+    padding: 0 40px;
 }
 .content .card{
-    width:80vw;
+    width:45vw;
     max-width: 464px;
     height: auto;
     min-height: 273px;
@@ -235,3 +236,25 @@ footer .apifrom{
 }
 
 
+@media (max-width: 640px) {
+    header{
+        width: 100vw;
+    }
+    header .select .css-b62m3t-container{
+        width: 80vw;
+        height: 30px;
+    }
+    .popular .popular_option button{
+        font-size: 14px;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; 
+        padding: 0;
+        column-gap: 0;
+    }
+    .content .card{
+        width:85vw;
+    }
+}
