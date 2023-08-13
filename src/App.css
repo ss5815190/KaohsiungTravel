@@ -96,15 +96,52 @@ header .select .css-15lsz6c-indicatorContainer{
     border-style: none;
     color: white;
 }
+/*分割線*/
+.line{
+    max-width: 900px;
+    height: 1px;
+    position: relative;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-image: linear-gradient(to right, #559AC8 3px, transparent 3px);
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+}
+.line .icon{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.line .icon .icon_contain{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #559AC8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.line .icon .icon_contain .triangle{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 11px solid #559AC8;
+}
 /*  */
 .content{
     margin-top: 270px;
     display: grid;
+    grid-auto-flow: row;
     grid-template-columns: repeat(2, 1fr);
-    gap:2vw;
+    column-gap: 16px;
+    row-gap: 36px;
 }
 .content .card{
-    width:70vw;
+    width:80vw;
     max-width: 464px;
     height: auto;
     min-height: 273px;
@@ -173,6 +210,23 @@ header .select .css-15lsz6c-indicatorContainer{
     margin-left: 26px;
 }
 
-
+/* footer */
+footer{
+    width: 100vw;
+    max-width: 1024px;
+    height: 90px;
+    background-color: #559AC8;
+    margin-top: 161px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .footer_name{
+    margin-top: 20px;
+}
+footer .apifrom{
+    color: #FFD366;
+    margin-top: 15px;
+}
 
 
