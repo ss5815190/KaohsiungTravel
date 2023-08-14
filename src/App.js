@@ -1,6 +1,6 @@
 import { ApiContext } from './compontents/GetApi.js';
 import {useContext}from'react';
-import Header from './compontents/Header.js';
+import Header from './compontents/header.js';
 import'./App.css'
 import Displaypage from './compontents/Displaypage.js';
 import Footer from './compontents/Footer.js';

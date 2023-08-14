@@ -84,6 +84,7 @@ header .select .css-15lsz6c-indicatorContainer{
 }
 .popular .popular_option{
     display: flex;
+    flex-wrap: wrap;
     margin-left: 51px;
     margin-top: 14px;
 }
@@ -147,7 +148,7 @@ header .select .css-15lsz6c-indicatorContainer{
     padding: 0 40px;
 }
 .content .card{
-    width:45vw;
+    width:40vw;
     max-width: 464px;
     height: auto;
     min-height: 273px;
@@ -244,6 +245,9 @@ footer .apifrom{
         width: 80vw;
         height: 30px;
     }
+    .popular{
+        height: auto;
+    }
     .popular .popular_option button{
         font-size: 14px;
     }
@@ -253,6 +257,7 @@ footer .apifrom{
         flex-wrap: wrap; 
         padding: 0;
         column-gap: 0;
+        margin-top: 400px;
     }
     .content .card{
         width:85vw;
