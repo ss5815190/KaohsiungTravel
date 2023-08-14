@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ApiContext } from './GetApi'
 
 const Card=(e)=>{
@@ -28,6 +28,7 @@ const Card=(e)=>{
 }
 const Displaypage = () => {
     const{district}=useContext(ApiContext)
+    const [currentPage,setCurrentPage]=useState(1)
     useEffect(()=>{
       const btn=document.getElementById("totop")
       const top=()=>{
@@ -56,7 +57,8 @@ const Displaypage = () => {
         <Card key={id} img={e.Picture1} opentime={e.Opentime} 
          phone={e.Tel} address={e.Add} name={e.Name} 
          area={e.Add.slice(6,9)}/>
-    ))}
+    ))//.slice(currentPage,currentPage*8-1)
+    }
     <button onClick={() =>{
       //點擊之後捲動到最上面
       window.scrollTo({top: 0,behavior: "smooth"})

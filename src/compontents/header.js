@@ -28,6 +28,7 @@ const Header = () => {
   },[data])
   
   console.log('行政區',district)
+  //切換地區
   const SwitchDistrict=(dis)=>{
     setDistrict(data.filter((filter)=>filter.Add.slice(6,9)===dis))
   }
