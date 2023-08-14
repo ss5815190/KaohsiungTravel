@@ -141,11 +141,16 @@ header .select .css-15lsz6c-indicatorContainer{
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
     row-gap: 36px;
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
     max-width: 1024px;
     padding: 0 40px;
+    position: relative;
+}
+.content >h2{
+    position: absolute;
+    top: -64px;
+    left: calc(50% - 54px);
+    font-size: 36px;
+    color: #8A82CC;
 }
 .content .card{
     width:40vw;
@@ -216,7 +221,17 @@ header .select .css-15lsz6c-indicatorContainer{
     margin-right: 12px;
     margin-left: 26px;
 }
-
+.content .totop{
+    position: fixed;
+    right: 52px;
+    bottom: 90px;
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0);
+    border-style: none;
+    padding: 0;
+    height: 24px;
+    opacity: 0;
+}
 /* footer */
 footer{
     width: 100vw;
@@ -235,7 +250,9 @@ footer .apifrom{
     color: #FFD366;
     margin-top: 15px;
 }
-
+.content .active{
+    opacity: 1;
+}
 
 @media (max-width: 640px) {
     header{
@@ -261,5 +278,6 @@ footer .apifrom{
     }
     .content .card{
         width:85vw;
+        
     }
 }
