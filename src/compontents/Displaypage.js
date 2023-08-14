@@ -31,14 +31,16 @@ const Displaypage = () => {
     useEffect(()=>{
       const btn=document.getElementById("totop")
       const top=()=>{
+        //卷軸沒有向下滾動把置頂按鈕隱藏
         if(window.scrollY!==0){
+          //.active opacity 0
           btn.classList.add('active');
         }
         else{
           btn.classList.remove('active');
         }
       }
-      top()
+      // top()
       window.addEventListener('scroll', top, true);
       return () => {
         window.removeEventListener('scroll', top, true);
@@ -55,11 +57,11 @@ const Displaypage = () => {
          phone={e.Tel} address={e.Add} name={e.Name} 
          area={e.Add.slice(6,9)}/>
     ))}
-    <button className="totop" id='totop'>
-    <img onClick={() =>{
-      window.scrollTo(0, 0)
-      }
-    } src="./images/icon_goTop.png" alt="" />
+    <button onClick={() =>{
+      //點擊之後捲動到最上面
+      window.scrollTo({top: 0,behavior: "smooth"})
+      }}  className="totop" id='totop'>
+    <img src="./images/icon_goTop.png" alt="" />
     </button>
     </main>
   )
