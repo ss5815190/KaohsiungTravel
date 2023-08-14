@@ -57,7 +57,7 @@ const Displaypage = () => {
         <Card key={id} img={e.Picture1} opentime={e.Opentime} 
          phone={e.Tel} address={e.Add} name={e.Name} 
          area={e.Add.slice(6,9)}/>
-    ))//.slice(currentPage,currentPage*8-1)
+    )).slice((currentPage-1)*8,currentPage*8) //0 7 8 15 16 23
     }
     <button onClick={() =>{
       //點擊之後捲動到最上面
@@ -65,6 +65,9 @@ const Displaypage = () => {
       }}  className="totop" id='totop'>
     <img src="./images/icon_goTop.png" alt="" />
     </button>
+    <button onClick={()=>{setCurrentPage(currentPage+1)
+    console.log('當前頁面',currentPage)
+    }}>next</button>
     </main>
   )
   
