@@ -32,7 +32,8 @@ const Displaypage = () => {
     <main className='content'>
     {district.map((e,id)=>(
         <Card key={id} img={e.Picture1} opentime={e.Opentime} 
-         phone={e.Tel} address={e.Add} name={e.Name} area={e.Add.slice(6,9)}/>
+         phone={e.Tel} address={e.Add} name={e.Name} 
+         area={e.Add.slice(6,9)}/>
     ))}
     </main>
   )
