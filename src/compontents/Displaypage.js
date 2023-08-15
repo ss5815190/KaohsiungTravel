@@ -48,6 +48,7 @@ const Displaypage = () => {
      };
     }
     ,[])
+    
   return (
     <main className='content'>
     <h2 style={{ display: district.length>0 ? 'block' : 'none' }}>
