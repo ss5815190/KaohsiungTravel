@@ -16,9 +16,13 @@ const Paging = () => {
   //debug
   useEffect(()=>{
     setCurrentPage(1)
-    setTotalPages(Math.round((district.length)/8))
+    setTotalPages(
+      district.length>3?Math.round((district.length)/8):
+      district.length===0?0:1
+      )
     console.log('換地區')
     console.log('行政區',district)
+    console.log('當前地區總頁數',totalPages)
   },[district])
   useEffect(()=>{
     console.log('當前頁面',currentPage)
@@ -34,11 +38,10 @@ const Paging = () => {
   useEffect(()=>{
     const tp=Array(totalPages).fill(0)
     setPages(tp)
-    console.log('當前地區總頁數',totalPages)
   },[totalPages])
   
   return (
-    <div className="paging">
+    <div style={{display:totalPages===0?'none':'flex'}} className="paging">
         <button onClick={prev}
         className="prev">{"< prev"}</button>
           {
