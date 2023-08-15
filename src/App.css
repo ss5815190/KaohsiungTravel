@@ -237,6 +237,13 @@ header .select .css-15lsz6c-indicatorContainer{
 .paging{
     display: flex;
     margin-top: 49px;
+    gap:8px;
+}
+.paging button{
+    border-style: none;
+    color:#4A4A4A;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
 }
 /* footer */
 footer{

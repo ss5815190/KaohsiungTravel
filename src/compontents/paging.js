@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ApiContext } from './GetApi.js';
 
 const Paging = () => {
   const{currentPage,setCurrentPage}=useContext(ApiContext);
   const{totalPages,setTotalPages,district}=useContext(ApiContext);
+  const [pages,setPages]=useState([])
   const prev=()=>{
     if(currentPage>1)
     setCurrentPage(currentPage-1) 
@@ -31,6 +32,8 @@ const Paging = () => {
     window.scrollTo({top: distopH,behavior: "smooth"})
   },[currentPage])
   useEffect(()=>{
+    const tp=Array(totalPages).fill(0)
+    setPages(tp)
     console.log('當前地區總頁數',totalPages)
   },[totalPages])
   
@@ -38,7 +41,12 @@ const Paging = () => {
     <div className="paging">
         <button onClick={prev}
         className="prev">{"< prev"}</button>
-          <div>{currentPage}</div>
+          {
+            pages.map((e,id)=>
+              <div style={{color:currentPage===id+1?'#559AC8':'black'}} 
+              key={id}>{id+1}</div>
+            )
+          }
         <button onClick={next}
         className="next">{"next >"}</button>
     </div>
