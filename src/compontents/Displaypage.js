@@ -60,7 +60,6 @@ const Displaypage = () => {
          area={e.Add.slice(6,9)}/>
     )).slice((currentPage-1)*8,currentPage*8) //0 7 8 15 16 23
     }
-    
     <button onClick={() =>{
       //點擊之後捲動到最上面
       window.scrollTo({top: 0,behavior: "smooth"})
