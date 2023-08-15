@@ -15,18 +15,22 @@ const Paging = () => {
   }
   //debug
   useEffect(()=>{
-    setCurrentPage(1)
-    setTotalPages(
-      district.length>3?Math.round((district.length)/8):
-      district.length===0?0:1
-      )
-    console.log('換地區')
-    console.log('行政區',district)
-    console.log('當前地區總頁數',totalPages)
+    if(district.length>0){
+      setCurrentPage(1)
+      setTotalPages(
+        //round會取最近的數<=3 會變0 
+        district.length>3?Math.round((district.length)/8):
+        district.length===0?0:1
+        )
+      console.log('換地區')
+      console.log('行政區',district)
+  }
   },[district])
+
+  // 換頁時滑動到上方
   useEffect(()=>{
     console.log('當前頁面',currentPage)
-    // 換頁時滑動到上方
+    
     // 使用 getBoundingClientRect() 方法來取得該元素在畫面中的距離
     // top 屬性是元素距離頁面頂部的距離，window.scrollY則是一個讀取器
     // ，返回文檔從上到下捲動的像素值
@@ -35,9 +39,11 @@ const Paging = () => {
     const distopH=distop.top + window.scrollY
     window.scrollTo({top: distopH,behavior: "smooth"})
   },[currentPage])
+  
   useEffect(()=>{
     const tp=Array(totalPages).fill(0)
     setPages(tp)
+    console.log('當前地區總頁數',totalPages)
   },[totalPages])
   
   return (
