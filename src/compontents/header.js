@@ -27,7 +27,6 @@ const Header = () => {
     console.log("options,",newOptions)
   },[data])
   
-  console.log('行政區',district)
   //切換地區
   const SwitchDistrict=(dis)=>{
     setDistrict(data.filter((filter)=>filter.Add.slice(6,9)===dis))
@@ -50,7 +49,7 @@ const Header = () => {
             <button style={{backgroundColor:'#F5D005'}} onClick={()=>SwitchDistrict('新興區')}>新興區</button>
             <button style={{backgroundColor:'#559AC8'}} onClick={()=>SwitchDistrict('鹽埕區')}>鹽埕區</button>
           </div>
-          <div className="line">
+          <div id='distop' className="line">
             <div className="icon">
               <div className="icon_contain">
                 <div className="triangle"></div>

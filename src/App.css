@@ -233,6 +233,11 @@ header .select .css-15lsz6c-indicatorContainer{
     height: 24px;
     opacity: 0;
 }
+/* paging */
+.paging{
+    display: flex;
+    margin-top: 49px;
+}
 /* footer */
 footer{
     width: 100vw;

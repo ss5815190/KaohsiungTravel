@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect} from 'react'
 import { ApiContext } from './GetApi'
 
 const Card=(e)=>{
@@ -27,8 +27,8 @@ const Card=(e)=>{
     )
 }
 const Displaypage = () => {
-    const{district}=useContext(ApiContext)
-    const [currentPage,setCurrentPage]=useState(1)
+    const{district,currentPage}=useContext(ApiContext)
+    
     useEffect(()=>{
       const btn=document.getElementById("totop")
       const top=()=>{
@@ -65,9 +65,6 @@ const Displaypage = () => {
       }}  className="totop" id='totop'>
     <img src="./images/icon_goTop.png" alt="" />
     </button>
-    <button onClick={()=>{setCurrentPage(currentPage+1)
-    console.log('當前頁面',currentPage)
-    }}>next</button>
     </main>
   )
   

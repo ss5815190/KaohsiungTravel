@@ -6,8 +6,10 @@ export const ApiContext = createContext();
 export const ApiContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState([])
-  const [disSelect,setDisSelect]=useState([])
+  const [disSelect,setDisSelect]=useState([])//行政區選項
   const [district,setDistrict]=useState([])//列出的行政區列表
+  const [currentPage,setCurrentPage]=useState(1)
+  const [totalPages,setTotalPages]=useState(0)
   useEffect(() => {
     const api=async()=>{
     try {
@@ -26,7 +28,7 @@ export const ApiContextProvider = ({ children }) => {
   
   return (
     <ApiContext.Provider value={{ data, isLoading,district,setDistrict
-    ,disSelect,setDisSelect}}>
+    ,disSelect,setDisSelect,currentPage,setCurrentPage,totalPages,setTotalPages}}>
       {children}
     </ApiContext.Provider>
   );
