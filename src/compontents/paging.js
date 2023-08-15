@@ -35,9 +35,11 @@ const Paging = () => {
     // top 屬性是元素距離頁面頂部的距離，window.scrollY則是一個讀取器
     // ，返回文檔從上到下捲動的像素值
     // 兩者相加得到元素在頁面的絕對高度
-    const distop=document.getElementById("distop").getBoundingClientRect()
-    const distopH=distop.top + window.scrollY
-    window.scrollTo({top: distopH,behavior: "smooth"})
+    if(district.length>0){
+      const distop=document.getElementById("distop").getBoundingClientRect()
+      const distopH=distop.top + window.scrollY
+      window.scrollTo({top: distopH,behavior: "smooth"})
+  }
   },[currentPage])
   
   useEffect(()=>{
