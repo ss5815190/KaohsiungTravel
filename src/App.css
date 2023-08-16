@@ -98,6 +98,7 @@ header .select .css-15lsz6c-indicatorContainer {
   border-radius: 5px;
   border-style: none;
   color: white;
+  cursor: pointer;
 }
 /*分割線*/
 .line {
@@ -203,6 +204,12 @@ header .select .css-15lsz6c-indicatorContainer {
   margin-bottom: 8px;
   display: flex;
 }
+.card .card-info .ticket {
+  margin-bottom: 8px;
+  display: flex;
+  justify-self: end;
+  margin-right: 24px;
+}
 .card .card-info .timeopen img {
   width: 18px;
   height: 18px;
@@ -220,6 +227,11 @@ header .select .css-15lsz6c-indicatorContainer {
   height: 20px;
   margin-right: 12px;
   margin-left: 26px;
+}
+.card .card-info .ticket img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
 .content .totop {
   position: fixed;
