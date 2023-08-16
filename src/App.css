@@ -242,7 +242,7 @@ header .select .css-15lsz6c-indicatorContainer {
   border-style: none;
   padding: 0;
   height: 24px;
-  opacity: 0;
+  
 }
 /* paging */
 .paging {
@@ -273,9 +273,6 @@ footer .footer_name {
 footer .apifrom {
   color: #ffd366;
   margin-top: 15px;
-}
-.content .active {
-  opacity: 1;
 }
 
 @media (max-width: 640px) {
