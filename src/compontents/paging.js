@@ -5,21 +5,24 @@ const Paging = () => {
   const { currentPage, setCurrentPage } = useContext(ApiContext);
   const { totalPages, setTotalPages, district } = useContext(ApiContext);
   const [pages, setPages] = useState([]);
+  //上一頁
   const prev = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
+  //下一頁
   const next = () => {
     if (totalPages > 0 && currentPage < totalPages)
       setCurrentPage(currentPage + 1);
   };
-  //debug
-  useEffect(() => {
+
+  //設定頁面內容數量
+  const pageContent=(num)=>{
     if (district.length > 0) {
       setCurrentPage(1);
       setTotalPages(
-        //round會取最近的數<=3 會變0
-        district.length > 3
-          ? Math.round(district.length / 8)
+        //Math.ceil()函式會回傳大於等於所給數字的最小整數
+        district.length > num
+          ? Math.ceil(district.length / num)
           : district.length === 0
           ? 0
           : 1
@@ -27,7 +30,11 @@ const Paging = () => {
       console.log("換地區");
       console.log("行政區", district);
     }
-  }, [district]);
+  }
+  useEffect(() => {
+    pageContent(8);
+    }
+  , [district]);
 
   // 換頁時滑動到上方
   useEffect(() => {
@@ -41,8 +48,9 @@ const Paging = () => {
       const distop = document.getElementById("distop").getBoundingClientRect();
       const distopH = distop.top + window.scrollY;
       window.scrollTo({ top: distopH, behavior: "smooth" });
+      console.log('滑動')
     }
-  }, [currentPage]);
+  }, [currentPage , district]);
 
   useEffect(() => {
     const tp = Array(totalPages).fill(0);
