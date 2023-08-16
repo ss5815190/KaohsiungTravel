@@ -23,6 +23,10 @@ const Card = (e) => {
             <img src="./images/icons_phone.png" alt="phone" />
             <p>{e.phone}</p>
           </div>
+          <div style={{display:e.tickinfo==='免費入園'?'flex':'none'}} className="ticket">
+            <img src="./images/icons_tag.png" alt="ticket" />
+            <p>{e.tickinfo}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -56,15 +60,16 @@ const Displaypage = () => {
       </h2>
       {
         district
-          .map((e, id) => (
+          .map((e) => (
             <Card
-              key={id}
+              key={e.Id}
               img={e.Picture1}
               opentime={e.Opentime}
               phone={e.Tel}
               address={e.Add}
               name={e.Name}
               area={e.Add.slice(6, 9)}
+              tickinfo={e.Ticketinfo}
             />
           ))
           .slice((currentPage - 1) * 8, currentPage * 8) //0 7 8 15 16 23
