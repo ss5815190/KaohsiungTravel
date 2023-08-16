@@ -5,7 +5,7 @@ import Select from "react-select";
 const Header = () => {
   const { data, setDistrict, district, disSelect, setDisSelect } =
     useContext(ApiContext);
-  const options = [{ value: "", label: "--請選擇行政區--" ,isDisabled:'true'}];
+  const options = [{ value: "", label: "--請選擇行政區--" ,isDisabled:true}];
   useEffect(() => {
     //把重複地區排除加到選單裡
     const uniqueObjects = data.filter((obj, index, self) => {
