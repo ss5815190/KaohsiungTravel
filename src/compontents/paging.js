@@ -16,25 +16,20 @@ const Paging = () => {
   };
 
   //設定頁面內容數量
-  const pageContent=(num)=>{
+  const pageContent = (num) => {
     if (district.length > 0) {
       setCurrentPage(1);
       setTotalPages(
         //Math.ceil()函式會回傳大於等於所給數字的最小整數
-        district.length > num
-          ? Math.ceil(district.length / num)
-          : district.length === 0
-          ? 0
-          : 1
+        district.length !== 0 ? Math.ceil(district.length / num) : 0
       );
       console.log("換地區");
       console.log("行政區", district);
     }
-  }
+  };
   useEffect(() => {
     pageContent(8);
-    }
-  , [district]);
+  }, [district]);
 
   // 換頁時滑動到上方
   useEffect(() => {
@@ -48,9 +43,9 @@ const Paging = () => {
       const distop = document.getElementById("distop").getBoundingClientRect();
       const distopH = distop.top + window.scrollY;
       window.scrollTo({ top: distopH, behavior: "smooth" });
-      console.log('滑動')
+      console.log("滑動");
     }
-  }, [currentPage , district]);
+  }, [currentPage, district]);
 
   useEffect(() => {
     const tp = Array(totalPages).fill(0);
