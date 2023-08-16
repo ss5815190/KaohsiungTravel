@@ -207,7 +207,7 @@ header .select .css-15lsz6c-indicatorContainer {
 .card .card-info .ticket {
   margin-bottom: 8px;
   display: flex;
-  justify-self: end;
+  justify-content: end;
   margin-right: 24px;
 }
 .card .card-info .timeopen img {
