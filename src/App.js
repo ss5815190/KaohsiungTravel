@@ -1,10 +1,10 @@
-import { ApiContext } from "./compontents/GetApi.js";
+import { ApiContext } from "./components/GetApi.js";
 import { useContext } from "react";
-import Header from "./compontents/header.js";
+import Header from "./components/Header.js";
 import "./App.css";
-import Displaypage from "./compontents/Displaypage.js";
-import Footer from "./compontents/Footer.js";
-import Paging from "./compontents/paging.js";
+import DisplayPage from "./components/DisplayPage.js";
+import Footer from "./components/Footer.js";
+import Paging from "./components/Paging.js";
 function App() {
   const { isLoading } = useContext(ApiContext);
   if (isLoading) {
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="homee">
       <Header />
-      <Displaypage />
+      <DisplayPage />
       <Paging />
       <Footer />
     </div>

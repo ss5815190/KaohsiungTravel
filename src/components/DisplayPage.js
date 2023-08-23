@@ -13,7 +13,7 @@ const Card = (e) => {
         <div className="card-info">
           <div className="timeopen">
             <img src="./images/icons_clock.png" alt="clock" />
-            <p>{e.opentime}</p>
+            <p>{e.openTime}</p>
           </div>
           <div className="address">
             <img src="./images/icons_pin.png" alt="pin" />
@@ -23,16 +23,16 @@ const Card = (e) => {
             <img src="./images/icons_phone.png" alt="phone" />
             <p>{e.phone}</p>
           </div>
-          <div style={{display:e.tickinfo==='免費入園'?'flex':'none'}} className="ticket">
+          <div style={{display:e.tickInfo==='免費入園'?'flex':'none'}} className="ticket">
             <img src="./images/icons_tag.png" alt="ticket" />
-            <p>{e.tickinfo}</p>
+            <p>{e.tickInfo}</p>
           </div>
         </div>
       </div>
     </div>
   );
 };
-const Displaypage = () => {
+const DisplayPage = () => {
   const { district, currentPage } = useContext(ApiContext);
   const [btnDisplay,setBtnDisplay]=useState(false);
   
@@ -62,12 +62,12 @@ const Displaypage = () => {
             <Card
               key={e.Id}
               img={e.Picture1}
-              opentime={e.Opentime}
+              openTime={e.Opentime}
               phone={e.Tel}
               address={e.Add}
               name={e.Name}
               area={e.Add.slice(6, 9)}
-              tickinfo={e.Ticketinfo}
+              tickInfo={e.Ticketinfo}
             />
           ))
           .slice((currentPage - 1) * 8, currentPage * 8) //0 7 8 15 16 23
@@ -86,4 +86,4 @@ const Displaypage = () => {
     </main>
   );
 };
-export default Displaypage;
+export default DisplayPage;

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { ApiContextProvider } from "./compontents/GetApi.js";
+import { ApiContextProvider } from "./components/GetApi.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ApiContextProvider>
