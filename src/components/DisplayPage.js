@@ -1,31 +1,38 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ApiContext } from "./GetApi";
 
-const Card = (e) => {
+const Card = (
+  {img,
+  openTime,
+  phone,
+  address,
+  name,
+  area,
+  tickInfo} ) => {
   return (
     <div className="card">
       <div className="card-grid">
         <div className="card-top">
-          <img src={e.img} alt="" />
-          <h2>{e.name}</h2>
-          <p>{e.area}</p>
+          <img src={img} alt="" />
+          <h2>{name}</h2>
+          <p>{area}</p>
         </div>
         <div className="card-info">
           <div className="timeopen">
             <img src="./images/icons_clock.png" alt="clock" />
-            <p>{e.openTime}</p>
+            <p>{openTime}</p>
           </div>
           <div className="address">
             <img src="./images/icons_pin.png" alt="pin" />
-            <p>{e.address}</p>
+            <p>{address}</p>
           </div>
           <div className="phone">
             <img src="./images/icons_phone.png" alt="phone" />
-            <p>{e.phone}</p>
+            <p>{phone}</p>
           </div>
-          <div style={{display:e.tickInfo==='免費入園'?'flex':'none'}} className="ticket">
+          <div style={{display:tickInfo==='免費入園'?'flex':'none'}} className="ticket">
             <img src="./images/icons_tag.png" alt="ticket" />
-            <p>{e.tickInfo}</p>
+            <p>{tickInfo}</p>
           </div>
         </div>
       </div>
