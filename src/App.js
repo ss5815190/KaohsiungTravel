@@ -4,7 +4,7 @@ import Header from "./components/Header.js";
 import "./App.css";
 import DisplayPage from "./components/DisplayPage.js";
 import Footer from "./components/Footer.js";
-import Paging from "./components/Paging.js";
+import Pagination from "./components/Pagination.js";
 function App() {
   const { isLoading } = useContext(ApiContext);
   if (isLoading) {
@@ -14,7 +14,7 @@ function App() {
     <div className="homee">
       <Header />
       <DisplayPage />
-      <Paging />
+      <Pagination />
       <Footer />
     </div>
   );

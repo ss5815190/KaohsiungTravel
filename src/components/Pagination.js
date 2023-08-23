@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ApiContext } from "./GetApi.js";
 
-const Paging = () => {
+const Pagination = () => {
   const { currentPage, setCurrentPage } = useContext(ApiContext);
   const { totalPages, setTotalPages, district } = useContext(ApiContext);
   const [pages, setPages] = useState([]);
@@ -75,4 +75,4 @@ const Paging = () => {
     </div>
   );
 };
-export default Paging;
+export default Pagination;
