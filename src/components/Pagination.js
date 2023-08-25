@@ -40,9 +40,9 @@ const Pagination = () => {
     // ，返回文檔從上到下捲動的像素值
     // 兩者相加得到元素在頁面的絕對高度
     if (district.length > 0) {
-      const distop = document.getElementById("distop").getBoundingClientRect();
-      const distopH = distop.top + window.scrollY;
-      window.scrollTo({ top: distopH, behavior: "smooth" });
+      const disTop = document.getElementById("distop").getBoundingClientRect();
+      const disTopH = disTop.top + window.scrollY;
+      window.scrollTo({ top: disTopH, behavior: "smooth" });
       console.log("滑動");
     }
   }, [currentPage, district]);

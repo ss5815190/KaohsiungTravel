@@ -16,10 +16,9 @@ export const ApiContextProvider = ({ children }) => {
         const res = await fetch(
           "https://api.kcg.gov.tw/api/service/get/9c8e1450-e833-499c-8320-29b36b7ace5c"
         );
-        const apidata = await res.json();
-        setData(apidata.data.XML_Head.Infos.Info);
+        const apiData = await res.json();
+        setData(apiData.data.XML_Head.Infos.Info);
         setIsLoading(false);
-        console.log("一開始的資料", apidata.data.XML_Head.Infos.Info);
       } catch (err) {
         console.log(err);
       }
