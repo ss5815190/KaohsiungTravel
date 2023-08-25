@@ -13,7 +13,7 @@ const Header = () => {
       const firstIndex = self.findIndex(
         (item) => item.Add.slice(6, 9) === obj.Add.slice(6, 9)
       );
-      // 只保留第一次出現的物件
+      // 只保留第一次出現的
       return index === firstIndex;
     });
     //只保留地區
