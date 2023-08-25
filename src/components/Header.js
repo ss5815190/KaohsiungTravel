@@ -3,7 +3,7 @@ import { ApiContext } from "./GetApi.js";
 import Select from "react-select";
 
 const Header = () => {
-  const { data, setDistrict, district, disSelect, setDisSelect } =
+  const { data, setDistrict, disSelect, setDisSelect } =
     useContext(ApiContext);
   const options = [{ value: "", label: "--請選擇行政區--" ,isDisabled:true}];
   useEffect(() => {
@@ -36,7 +36,6 @@ const Header = () => {
   };
   return (
     <header style={{ backgroundImage: `url(./images/the-urban.png)` }}>
-      {/* <img src="./images/the-urban.png" alt="urban"/> */}
       <h1>高雄旅遊資訊</h1>
       <div className="select">
         <Select
