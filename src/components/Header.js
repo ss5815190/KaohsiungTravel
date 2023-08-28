@@ -17,10 +17,11 @@ const Header = () => {
       return index === firstIndex;
     });
     //只保留地區
-    const updatedOptions = uniqueObjects.map((obj) => ({
+    const updatedOptions = uniqueObjects.reduce(
+      (acc,obj) => acc.concat({
       value: obj.Add.slice(6, 9),
       label: obj.Add.slice(6, 9),
-    }));
+    }),[]);
     //用 reduce 函數將這些轉換後的選項合併到現有的 options
     const newOptions = updatedOptions.reduce(
       (acc, option) => acc.concat(option),
